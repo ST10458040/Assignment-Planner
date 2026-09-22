@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "812394138394",
+    "project_id": "assignment-planner-ebdcd",
+    "storage_bucket": "assignment-planner-ebdcd.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:812394138394:android:aa97cc2a24b815f700baa3",
+        "android_client_info": {
+          "package_name": "com.example.assignmentplanner"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPqe3zUVLkyV4bE3V6NyOAXPfQkoMa_hM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
