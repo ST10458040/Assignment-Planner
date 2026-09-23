@@ -1,8 +1,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.AssignmentPlanner" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <!-- Base application theme forced to Dark Mode for premium contrast -->
+    <style name="Base.Theme.AssignmentPlanner" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/accent_violet</item>
+        <item name="colorSecondary">@color/accent_cyan</item>
+        <item name="colorTertiary">@color/tertiary_green</item>
+        <item name="colorError">@color/destructive_red</item>
+        <item name="android:textColorHint">@color/outline</item>
     </style>
 
     <style name="Theme.AssignmentPlanner" parent="Base.Theme.AssignmentPlanner" />

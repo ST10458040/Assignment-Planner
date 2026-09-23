@@ -6,6 +6,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import android.view.View
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class CalendarActivity : AppCompatActivity() {
@@ -14,10 +15,14 @@ class CalendarActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_calendar)
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(android.R.id.content)) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, 0)
             insets
+        }
+
+        findViewById<View>(R.id.iv_profile_icon)?.setOnClickListener {
+            startActivity(Intent(this, ProfileActivity::class.java))
         }
 
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_nav)

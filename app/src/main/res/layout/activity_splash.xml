@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_background">
+    android:background="@color/bg_gradient_start">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="300dp"
@@ -29,9 +29,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Assignment Planner"
+            android:text="Izabelo"
             android:textColor="@color/text_primary"
-            android:textSize="24sp"
+            android:textSize="28sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -41,8 +41,8 @@
             android:id="@+id/tv_version"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="v1.0.0"
-            android:textColor="@color/text_secondary"
+            android:text="v2.4.1 Premium"
+            android:textColor="@color/accent_cyan"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -52,11 +52,22 @@
             android:id="@+id/pb_loading"
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_height="4dp"
+            android:layout_marginTop="32dp"
             android:indeterminate="true"
-            android:indeterminateTint="@color/accent_cyan"
+            android:indeterminateTint="@color/tertiary_green"
             app:layout_constraintTop_toBottomOf="@id/tv_version" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Syncing Room DB..."
+            android:textColor="@color/text_on_surface_variant"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pb_loading" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
