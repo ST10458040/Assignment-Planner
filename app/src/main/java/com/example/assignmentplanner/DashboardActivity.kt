@@ -8,14 +8,14 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+
+
 import java.io.BufferedReader
 import java.io.InputStreamReader
 import java.net.HttpURLConnection
 import java.net.URL
 
-class DashboardActivity : AppCompatActivity() {
+class DashboardActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -23,11 +23,11 @@ class DashboardActivity : AppCompatActivity() {
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, 0)
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        findViewById<ExtendedFloatingActionButton>(R.id.fab_add_assignment).setOnClickListener {
+        findViewById<View>(R.id.fab_add)?.setOnClickListener {
             startActivity(Intent(this, AddAssignmentActivity::class.java))
         }
 
@@ -61,30 +61,11 @@ class DashboardActivity : AppCompatActivity() {
             }
         }.start()
 
-        val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_nav)
-        bottomNav.selectedItemId = R.id.nav_dashboard
-        bottomNav.setOnItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.nav_dashboard -> true
-                R.id.nav_assignments -> {
-                    startActivity(Intent(this, AssignmentsActivity::class.java))
-                    false
-                }
-                R.id.nav_calendar -> {
-                    startActivity(Intent(this, CalendarActivity::class.java))
-                    false
-                }
-                R.id.nav_settings -> {
-                    startActivity(Intent(this, SettingsActivity::class.java))
-                    false
-                }
-                else -> false
-            }
-        }
+        setupCustomBottomNavigation(R.id.nav_dashboard)
     }
 
     override fun onResume() {
         super.onResume()
-        findViewById<BottomNavigationView>(R.id.bottom_nav)?.selectedItemId = R.id.nav_dashboard
+        setupCustomBottomNavigation(R.id.nav_dashboard)
     }
 }

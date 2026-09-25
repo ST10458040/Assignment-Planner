@@ -55,7 +55,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:fillViewport="true"
-        app:layout_constraintBottom_toTopOf="@id/bottom_nav"
+        app:layout_constraintBottom_toTopOf="@id/dock"
         app:layout_constraintTop_toBottomOf="@id/cl_profile_header">
 
         <LinearLayout
@@ -80,17 +80,37 @@
                     android:orientation="vertical"
                     android:padding="20dp">
 
-                    <ImageView
-                        android:id="@+id/iv_profile_avatar"
-                        android:layout_width="96dp"
-                        android:layout_height="96dp"
-                        android:layout_marginBottom="12dp"
-                        android:background="@color/surface_container_high"
-                        android:padding="4dp"
-                        android:scaleType="centerCrop"
-                        android:src="@android:drawable/sym_def_app_icon" />
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp">
+
+                        <TextView
+                            android:id="@+id/tv_profile_avatar"
+                            android:layout_width="96dp"
+                            android:layout_height="96dp"
+                            android:background="@drawable/primary_button_bg"
+                            android:gravity="center"
+                            android:text="MS"
+                            android:textColor="@color/white"
+                            android:textSize="36sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/btn_change_avatar"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_gravity="bottom|end"
+                            android:layout_marginBottom="-4dp"
+                            android:layout_marginEnd="-4dp"
+                            android:background="@drawable/dock_background"
+                            android:padding="6dp"
+                            android:src="@android:drawable/ic_menu_camera"
+                            app:tint="@color/text_primary" />
+                    </FrameLayout>
 
                     <TextView
+                        android:id="@+id/tv_profile_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Mlondi Sithole"
@@ -248,6 +268,7 @@
                     android:padding="16dp">
 
                     <TextView
+                        android:id="@+id/tv_profile_faculty"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Information Systems &amp; Computer Science"
@@ -289,29 +310,134 @@
                 android:textColor="@color/text_primary"
                 android:textStyle="bold" />
 
-            <!-- Logout Button -->
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_logout"
+            <!-- Security & Data Section -->
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:layout_marginTop="8dp"
-                android:backgroundTint="@color/error_container"
-                android:text="Phuma / Log Out"
-                android:textColor="@color/text_primary"
-                app:cornerRadius="12dp" />
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardBackgroundColor="@color/surface_container_low"
+                app:cardCornerRadius="16dp"
+                app:strokeColor="@color/outline"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="16dp">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@android:drawable/ic_secure"
+                            app:tint="@color/text_on_surface_variant" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="Ukuphepha / Security &amp; Data"
+                            android:textColor="@color/text_primary"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/btn_change_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/surface_container_high"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@android:drawable/ic_menu_revert"
+                            app:tint="@color/text_on_surface_variant" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_weight="1"
+                            android:text="Shintsha Iphasiwedi / Change Password"
+                            android:textColor="@color/text_primary"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@android:drawable/ic_media_play"
+                            app:tint="@color/text_on_surface_variant" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/btn_export_data"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/surface_container_high"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@android:drawable/stat_sys_download"
+                            app:tint="@color/accent_cyan" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_weight="1"
+                            android:text="Landa Uhlelo / Export Timetable"
+                            android:textColor="@color/text_primary"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@android:drawable/stat_sys_download"
+                            app:tint="@color/text_on_surface_variant" />
+                    </LinearLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_logout"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="16dp"
+                        android:backgroundTint="#2D151B"
+                        android:text="Phuma / Log Out"
+                        android:textColor="@color/destructive_red"
+                        app:cornerRadius="12dp" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>
     </ScrollView>
 
     <!-- Bottom Navigation Bar -->
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_nav"
+    <include
+        layout="@layout/bottom_dock"
+        android:id="@+id/dock"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/surface_container"
-        app:itemIconTint="@color/accent_cyan"
-        app:itemTextColor="@color/text_on_surface_variant"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:menu="@menu/bottom_nav_menu" />
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

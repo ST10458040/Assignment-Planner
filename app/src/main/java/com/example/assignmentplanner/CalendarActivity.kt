@@ -7,9 +7,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import android.view.View
-import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class CalendarActivity : AppCompatActivity() {
+
+class CalendarActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -17,7 +17,7 @@ class CalendarActivity : AppCompatActivity() {
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, 0)
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
@@ -25,30 +25,11 @@ class CalendarActivity : AppCompatActivity() {
             startActivity(Intent(this, ProfileActivity::class.java))
         }
 
-        val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_nav)
-        bottomNav.selectedItemId = R.id.nav_calendar
-        bottomNav.setOnItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.nav_dashboard -> {
-                    startActivity(Intent(this, DashboardActivity::class.java))
-                    false
-                }
-                R.id.nav_assignments -> {
-                    startActivity(Intent(this, AssignmentsActivity::class.java))
-                    false
-                }
-                R.id.nav_calendar -> true
-                R.id.nav_settings -> {
-                    startActivity(Intent(this, SettingsActivity::class.java))
-                    false
-                }
-                else -> false
-            }
-        }
+        setupCustomBottomNavigation(R.id.nav_calendar)
     }
 
     override fun onResume() {
         super.onResume()
-        findViewById<BottomNavigationView>(R.id.bottom_nav)?.selectedItemId = R.id.nav_calendar
+        setupCustomBottomNavigation(R.id.nav_calendar)
     }
 }

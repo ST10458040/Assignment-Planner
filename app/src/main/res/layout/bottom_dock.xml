@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    android:layout_marginHorizontal="16dp"
+    android:clipChildren="false"
+    android:clipToPadding="false">
+
+    <!-- The Main Pill Dock Container -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/dock_pill"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:layout_marginTop="28dp"
+        app:cardBackgroundColor="#0C101D"
+        app:cardCornerRadius="34dp"
+        app:cardElevation="8dp"
+        app:strokeColor="#1E293B"
+        app:strokeWidth="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingHorizontal="8dp"
+            android:weightSum="5.2">
+
+            <!-- Item 1: Dashboard -->
+            <LinearLayout
+                android:id="@+id/nav_dashboard"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:focusable="true">
+                <ImageView
+                    android:id="@+id/icon_dashboard"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/ic_dashboard"
+                    app:tint="#94A3B8" />
+                <TextView
+                    android:id="@+id/text_dashboard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Dashboard"
+                    android:textColor="#94A3B8"
+                    android:textSize="11sp"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <!-- Item 2: Calendar -->
+            <LinearLayout
+                android:id="@+id/nav_calendar"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:focusable="true">
+                <ImageView
+                    android:id="@+id/icon_calendar"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/ic_calendar"
+                    app:tint="#94A3B8" />
+                <TextView
+                    android:id="@+id/text_calendar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Calendar"
+                    android:textColor="#94A3B8"
+                    android:textSize="11sp"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <!-- Spacer -->
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.2" />
+
+            <!-- Item 4: Tasks -->
+            <LinearLayout
+                android:id="@+id/nav_assignments"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:focusable="true">
+                <ImageView
+                    android:id="@+id/icon_assignments"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/ic_tasks"
+                    app:tint="#94A3B8" />
+                <TextView
+                    android:id="@+id/text_assignments"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Tasks"
+                    android:textColor="#94A3B8"
+                    android:textSize="11sp"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <!-- Item 5: Settings -->
+            <LinearLayout
+                android:id="@+id/nav_settings"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:focusable="true">
+                <ImageView
+                    android:id="@+id/icon_settings"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/ic_settings"
+                    app:tint="#94A3B8" />
+                <TextView
+                    android:id="@+id/text_settings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Settings"
+                    android:textColor="#94A3B8"
+                    android:textSize="11sp"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Center Elevated '+' Button -->
+    <FrameLayout
+        android:id="@+id/fab_add"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="36dp"
+        android:background="@drawable/gradient_fab_bg"
+        android:elevation="8dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_gravity="center"
+            android:src="@android:drawable/ic_input_add"
+            app:tint="@android:color/white" />
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

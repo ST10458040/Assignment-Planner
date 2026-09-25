@@ -48,7 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:fillViewport="true"
-        app:layout_constraintBottom_toTopOf="@id/bottom_nav"
+        app:layout_constraintBottom_toTopOf="@id/dock"
         app:layout_constraintTop_toBottomOf="@id/cl_settings_header">
 
         <LinearLayout
@@ -182,7 +182,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:text="Language &amp; Display"
+                android:text="Ulimi Nezintandokazi / Language &amp; Display"
                 android:textColor="@color/text_primary"
                 android:textStyle="bold" />
 
@@ -226,6 +226,56 @@
                             android:text="English"
                             android:textColor="@color/text_on_surface_variant" />
                     </LinearLayout>
+
+                    <!-- Theme Selection (New) -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="Theme &amp; Aesthetics"
+                        android:textColor="@color/text_on_surface_variant"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_theme_atmospheric"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            android:text="Atmospheric"
+                            android:textSize="10sp"
+                            android:textColor="@color/text_primary"
+                            app:cornerRadius="8dp"
+                            app:strokeColor="@color/accent_cyan" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_theme_amoled"
+                            style="@style/Widget.MaterialComponents.Button.TextButton"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="1"
+                            android:text="AMOLED"
+                            android:textSize="10sp"
+                            android:textColor="@color/text_on_surface_variant" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_theme_light"
+                            style="@style/Widget.MaterialComponents.Button.TextButton"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="1"
+                            android:text="Light"
+                            android:textSize="10sp"
+                            android:textColor="@color/text_on_surface_variant" />
+                    </LinearLayout>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -234,7 +284,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:text="Reminders"
+                android:text="Izaziso &amp; Izexwayiso / Reminders"
                 android:textColor="@color/text_primary"
                 android:textStyle="bold" />
 
@@ -249,34 +299,178 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
+                    android:orientation="vertical"
                     android:padding="16dp">
 
+                    <!-- Push Notifications -->
                     <LinearLayout
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-                        <TextView
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="16dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Izaziso Ezisheshayo (Push)"
+                                android:textColor="@color/text_primary"
+                                android:textStyle="bold" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Deadlines, sync reports, reviews"
+                                android:textColor="@color/text_on_surface_variant"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/switch_notifications"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Push Notifications"
-                            android:textColor="@color/text_primary"
-                            android:textStyle="bold" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Deadlines and sync reports"
-                            android:textColor="@color/text_on_surface_variant"
-                            android:textSize="11sp" />
+                            android:checked="true" />
                     </LinearLayout>
 
-                    <androidx.appcompat.widget.SwitchCompat
-                        android:id="@+id/switch_notifications"
+                    <!-- Default Reminder Timing -->
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:checked="true" />
+                        android:layout_marginBottom="8dp"
+                        android:text="Default Reminder Timing"
+                        android:textColor="@color/text_on_surface_variant"
+                        android:textSize="12sp" />
+
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:scrollbars="none">
+
+                        <com.google.android.material.chip.ChipGroup
+                            android:id="@+id/cg_reminders"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:singleSelection="true">
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chip_24h"
+                                style="@style/Widget.MaterialComponents.Chip.Choice"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="24h phambili"
+                                android:textColor="@color/text_primary"
+                                app:chipBackgroundColor="@color/surface_container_high" />
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chip_3h"
+                                style="@style/Widget.MaterialComponents.Chip.Choice"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="3h"
+                                android:textColor="@color/text_primary"
+                                app:chipBackgroundColor="@color/surface_container" />
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chip_1h"
+                                style="@style/Widget.MaterialComponents.Chip.Choice"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="1h"
+                                android:textColor="@color/text_primary"
+                                app:chipBackgroundColor="@color/surface_container" />
+
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chip_due_time"
+                                style="@style/Widget.MaterialComponents.Chip.Choice"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Due Time"
+                                android:textColor="@color/text_primary"
+                                app:chipBackgroundColor="@color/surface_container" />
+                        </com.google.android.material.chip.ChipGroup>
+                    </HorizontalScrollView>
+
+                    <!-- Haptics -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="16dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Umsindo Oyingozi &amp; Haptics"
+                                android:textColor="@color/text_primary"
+                                android:textStyle="bold" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Vibration for high-weight tasks"
+                                android:textColor="@color/text_on_surface_variant"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/switch_haptics"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true" />
+                    </LinearLayout>
+
+                    <!-- Daily Study Briefing Chime -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Daily Study Briefing Chime"
+                                android:textColor="@color/text_primary"
+                                android:textStyle="bold" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Morning digest (08:00 SAST)"
+                                android:textColor="@color/text_on_surface_variant"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="08:00"
+                            android:layout_marginEnd="8dp"
+                            android:paddingHorizontal="6dp"
+                            android:paddingVertical="2dp"
+                            android:background="@color/surface_container"
+                            android:textColor="@color/text_on_surface_variant" />
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/switch_daily_chime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true" />
+                    </LinearLayout>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -339,14 +533,11 @@
     </ScrollView>
 
     <!-- Bottom Navigation Bar -->
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_nav"
+    <include
+        layout="@layout/bottom_dock"
+        android:id="@+id/dock"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/surface_container"
-        app:itemIconTint="@color/accent_cyan"
-        app:itemTextColor="@color/text_on_surface_variant"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:menu="@menu/bottom_nav_menu" />
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
