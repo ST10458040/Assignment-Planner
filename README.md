@@ -1,5 +1,7 @@
 Izabelo - Assignment Planner 
 
+(YouTube demonstration prototype app: https://youtube.com/shorts/eprdZEvA6vQ?si=Jq-r7EzC_h1PFlG3 )
+
 Izabelo is a premium, offline-first assignment and module tracker designed for university students to organize deadlines, manage subtasks, and track their academic streak seamlessly. 
 
  
