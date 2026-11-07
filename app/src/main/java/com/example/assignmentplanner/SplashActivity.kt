@@ -22,6 +22,7 @@ class SplashActivity : AppCompatActivity() {
         }
 
         Handler(Looper.getMainLooper()).postDelayed({
+            // Normally we'd check Firebase auth here, but mock for now
             startActivity(Intent(this, LoginActivity::class.java))
             finish()
         }, 2000)

@@ -1,3 +1,38 @@
 <resources>
-    <string name="app_name">assignment planner</string>
+    <string name="app_name">Assignment Planner</string>
+    <string name="default_web_client_id">YOUR_CLIENT_ID_HERE.apps.googleusercontent.com</string>
+
+    <string name="settings_title">Settings &amp; Sync</string>
+    <string name="status_online">ONLINE</string>
+    <string name="sync_engine">Sync Engine</string>
+    <string name="pending_sync">3 PENDING</string>
+    <string name="queue">QUEUE</string>
+    <string name="queue_items">3 Items</string>
+    <string name="last_sync">LAST SYNC</string>
+    <string name="last_sync_time">10:42</string>
+    <string name="room_db">ROOM DB</string>
+    <string name="room_db_status">v4 Active</string>
+    <string name="sync_now">Sync Now</string>
+    <string name="language_and_display">Language &amp; Display</string>
+    <string name="lang_zulu">isiZulu</string>
+    <string name="lang_english">English</string>
+    <string name="theme_and_aesthetics">Theme &amp; Aesthetics</string>
+    <string name="theme_atmospheric">Atmospheric</string>
+    <string name="theme_amoled">AMOLED</string>
+    <string name="theme_light">Light</string>
+    <string name="reminders_and_alerts">Reminders &amp; Alerts</string>
+    <string name="push_notifications">Push Notifications</string>
+    <string name="push_notif_desc">Deadlines, sync reports, reviews</string>
+    <string name="default_reminder_timing">Default Reminder Timing</string>
+    <string name="reminder_24h">24h before</string>
+    <string name="reminder_3h">3h</string>
+    <string name="reminder_1h">1h</string>
+    <string name="reminder_due">Due Time</string>
+    <string name="haptics">Haptics &amp; Sounds</string>
+    <string name="haptics_desc">Vibration for high-weight tasks</string>
+    <string name="daily_chime">Daily Study Briefing Chime</string>
+    <string name="daily_chime_desc">Morning digest (08:00 SAST)</string>
+    <string name="time_0800">08:00</string>
+    <string name="logout">Log Out</string>
+    <string name="user_name">Mlondi Sithole</string>
 </resources>

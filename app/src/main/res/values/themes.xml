@@ -9,4 +9,24 @@
     </style>
 
     <style name="Theme.AssignmentPlanner" parent="Base.Theme.AssignmentPlanner" />
+
+    <style name="Theme.AssignmentPlanner.Atmospheric" parent="Base.Theme.AssignmentPlanner">
+        <item name="android:windowBackground">@color/bg_gradient_start</item>
+    </style>
+
+    <style name="Theme.AssignmentPlanner.Amoled" parent="Base.Theme.AssignmentPlanner">
+        <item name="android:windowBackground">@android:color/black</item>
+    </style>
+
+    <style name="Theme.AssignmentPlanner.Light" parent="Theme.Material3.Light.NoActionBar">
+        <item name="android:windowBackground">@color/light_window_background</item>
+        <item name="colorSurface">@color/light_card_surface</item>
+        <item name="colorOnSurface">@color/light_text_primary</item>
+        <item name="colorPrimary">@color/light_accent_primary</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorSecondary">@color/light_accent_cyan</item>
+        <item name="android:statusBarColor">@color/light_window_background</item>
+        <item name="android:navigationBarColor">@color/light_nav_dock</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
 </resources>

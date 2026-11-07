@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/header_bar"
+    android:layout_width="match_parent"
+    android:layout_height="72dp"
+    android:background="#1A0F131D"
+    android:paddingHorizontal="16dp">
+
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/ic_assignment_logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_header_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:text="Dashboard"
+        android:textColor="@color/text_primary"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/iv_logo"
+        app:layout_constraintTop_toTopOf="@id/iv_logo" />
+
+    <TextView
+        android:id="@+id/tv_sync_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="• Synced with Cloud"
+        android:textColor="@color/tertiary_green"
+        android:textSize="11sp"
+        app:layout_constraintStart_toStartOf="@id/tv_header_title"
+        app:layout_constraintTop_toBottomOf="@id/tv_header_title" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/surface_container"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="4dp"
+            android:text="EN"
+            android:textColor="@color/accent_cyan"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <!-- Notification Bell with Badge -->
+        <FrameLayout
+            android:id="@+id/fl_notifications"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:clickable="true"
+            android:focusable="true">
+            <ImageView
+                android:id="@+id/iv_notifications"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:layout_margin="4dp"
+                android:src="@drawable/ic_notifications"
+                app:tint="@color/text_on_surface_variant" />
+            <View
+                android:id="@+id/badge_unread"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_gravity="top|end"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="6dp"
+                android:background="@drawable/badge_dot" />
+        </FrameLayout>
+
+        <!-- Initials Avatar -->
+        <FrameLayout
+            android:id="@+id/fl_profile_avatar"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="12dp"
+            android:background="@drawable/avatar_gradient"
+            android:clickable="true"
+            android:focusable="true">
+            <TextView
+                android:id="@+id/tv_profile_initials"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="MS"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </FrameLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

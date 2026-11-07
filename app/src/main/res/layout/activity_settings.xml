@@ -17,12 +17,12 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/tv_header_title"
+            android:id="@+id/tvSettingsTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Settings &amp; Sync"
+            android:text="@string/settings_title"
             android:textColor="@color/text_primary"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -34,7 +34,7 @@
             android:background="@color/surface_container"
             android:paddingHorizontal="8dp"
             android:paddingVertical="4dp"
-            android:text="ONLINE"
+            android:text="@string/status_online"
             android:textColor="@color/tertiary_green"
             android:textSize="10sp"
             android:textStyle="bold"
@@ -80,7 +80,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Sync Engine"
+                            android:text="@string/sync_engine"
                             android:textColor="@color/text_primary"
                             android:textSize="16sp"
                             android:textStyle="bold"
@@ -94,7 +94,7 @@
                             android:background="@color/surface_container_high"
                             android:paddingHorizontal="8dp"
                             android:paddingVertical="4dp"
-                            android:text="3 PENDING"
+                            android:text="@string/pending_sync"
                             android:textColor="@color/accent_cyan"
                             android:textSize="10sp"
                             android:textStyle="bold"
@@ -116,13 +116,13 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="QUEUE"
+                                android:text="@string/queue"
                                 android:textColor="@color/text_on_surface_variant"
                                 android:textSize="9sp" />
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="3 Items"
+                                android:text="@string/queue_items"
                                 android:textColor="@color/text_primary"
                                 android:textStyle="bold" />
                         </LinearLayout>
@@ -135,13 +135,13 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="LAST SYNC"
+                                android:text="@string/last_sync"
                                 android:textColor="@color/text_on_surface_variant"
                                 android:textSize="9sp" />
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="10:42"
+                                android:text="@string/last_sync_time"
                                 android:textColor="@color/text_primary"
                                 android:textStyle="bold" />
                         </LinearLayout>
@@ -154,13 +154,13 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="ROOM DB"
+                                android:text="@string/room_db"
                                 android:textColor="@color/text_on_surface_variant"
                                 android:textSize="9sp" />
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="v4 Active"
+                                android:text="@string/room_db_status"
                                 android:textColor="@color/tertiary_green"
                                 android:textStyle="bold" />
                         </LinearLayout>
@@ -171,7 +171,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="54dp"
                         android:backgroundTint="@color/accent_cyan"
-                        android:text="Sync Now"
+                        android:text="@string/sync_now"
                         android:textColor="@color/text_primary"
                         app:cornerRadius="12dp" />
                 </LinearLayout>
@@ -182,7 +182,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:text="Ulimi Nezintandokazi / Language &amp; Display"
+                android:text="@string/language_and_display"
                 android:textColor="@color/text_primary"
                 android:textStyle="bold" />
 
@@ -211,7 +211,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="isiZulu"
+                            android:text="@string/lang_zulu"
                             android:textColor="@color/text_primary"
                             app:cornerRadius="8dp"
                             app:strokeColor="@color/accent_cyan" />
@@ -223,7 +223,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
                             android:layout_weight="1"
-                            android:text="English"
+                            android:text="@string/lang_english"
                             android:textColor="@color/text_on_surface_variant" />
                     </LinearLayout>
 
@@ -233,7 +233,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
                         android:layout_marginBottom="8dp"
-                        android:text="Theme &amp; Aesthetics"
+                        android:text="@string/theme_and_aesthetics"
                         android:textColor="@color/text_on_surface_variant"
                         android:textSize="12sp" />
 
@@ -248,7 +248,7 @@
                             android:layout_width="0dp"
                             android:layout_height="50dp"
                             android:layout_weight="1"
-                            android:text="Atmospheric"
+                            android:text="@string/theme_atmospheric"
                             android:textSize="10sp"
                             android:textColor="@color/text_primary"
                             app:cornerRadius="8dp"
@@ -261,7 +261,7 @@
                             android:layout_height="50dp"
                             android:layout_marginStart="8dp"
                             android:layout_weight="1"
-                            android:text="AMOLED"
+                            android:text="@string/theme_amoled"
                             android:textSize="10sp"
                             android:textColor="@color/text_on_surface_variant" />
 
@@ -272,9 +272,43 @@
                             android:layout_height="50dp"
                             android:layout_marginStart="8dp"
                             android:layout_weight="1"
-                            android:text="Light"
+                            android:text="@string/theme_light"
                             android:textSize="10sp"
                             android:textColor="@color/text_on_surface_variant" />
+                    </LinearLayout>
+
+                    <!-- Gamification Toggle -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="16dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Gamification &amp; Study Velocity"
+                                android:textColor="@color/text_primary"
+                                android:textStyle="bold" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Show streaks, XP counters, and weekly goal progress"
+                                android:textColor="@color/text_on_surface_variant"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/switchGamification"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true" />
                     </LinearLayout>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -284,7 +318,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:text="Izaziso &amp; Izexwayiso / Reminders"
+                android:text="@string/reminders_and_alerts"
                 android:textColor="@color/text_primary"
                 android:textStyle="bold" />
 
@@ -318,13 +352,13 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Izaziso Ezisheshayo (Push)"
+                                android:text="@string/push_notifications"
                                 android:textColor="@color/text_primary"
                                 android:textStyle="bold" />
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Deadlines, sync reports, reviews"
+                                android:text="@string/push_notif_desc"
                                 android:textColor="@color/text_on_surface_variant"
                                 android:textSize="11sp" />
                         </LinearLayout>
@@ -341,7 +375,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
-                        android:text="Default Reminder Timing"
+                        android:text="@string/default_reminder_timing"
                         android:textColor="@color/text_on_surface_variant"
                         android:textSize="12sp" />
 
@@ -362,16 +396,16 @@
                                 style="@style/Widget.MaterialComponents.Chip.Choice"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="24h phambili"
+                                android:text="@string/reminder_24h"
                                 android:textColor="@color/text_primary"
                                 app:chipBackgroundColor="@color/surface_container_high" />
 
                             <com.google.android.material.chip.Chip
-                                android:id="@+id/chip_3h"
+                                android:id="@+id/chip_2h"
                                 style="@style/Widget.MaterialComponents.Chip.Choice"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="3h"
+                                android:text="2h"
                                 android:textColor="@color/text_primary"
                                 app:chipBackgroundColor="@color/surface_container" />
 
@@ -380,7 +414,7 @@
                                 style="@style/Widget.MaterialComponents.Chip.Choice"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="1h"
+                                android:text="@string/reminder_1h"
                                 android:textColor="@color/text_primary"
                                 app:chipBackgroundColor="@color/surface_container" />
 
@@ -389,7 +423,7 @@
                                 style="@style/Widget.MaterialComponents.Chip.Choice"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Due Time"
+                                android:text="@string/reminder_due"
                                 android:textColor="@color/text_primary"
                                 app:chipBackgroundColor="@color/surface_container" />
                         </com.google.android.material.chip.ChipGroup>
@@ -411,13 +445,13 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Umsindo Oyingozi &amp; Haptics"
+                                android:text="@string/haptics"
                                 android:textColor="@color/text_primary"
                                 android:textStyle="bold" />
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Vibration for high-weight tasks"
+                                android:text="@string/haptics_desc"
                                 android:textColor="@color/text_on_surface_variant"
                                 android:textSize="11sp" />
                         </LinearLayout>
@@ -444,13 +478,13 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Daily Study Briefing Chime"
+                                android:text="@string/daily_chime"
                                 android:textColor="@color/text_primary"
                                 android:textStyle="bold" />
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Morning digest (08:00 SAST)"
+                                android:text="@string/daily_chime_desc"
                                 android:textColor="@color/text_on_surface_variant"
                                 android:textSize="11sp" />
                         </LinearLayout>
@@ -458,7 +492,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="08:00"
+                            android:text="@string/time_0800"
                             android:layout_marginEnd="8dp"
                             android:paddingHorizontal="6dp"
                             android:paddingVertical="2dp"
@@ -504,15 +538,17 @@
                         android:layout_weight="1"
                         android:orientation="vertical">
                         <TextView
+                            android:id="@+id/tv_account_name"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Mlondi Sithole"
+                            android:text="@string/user_name"
                             android:textColor="@color/text_primary"
                             android:textStyle="bold" />
                         <TextView
+                            android:id="@+id/tv_account_email"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="mlondi.sithole@uct.ac.za"
+                            android:text="student@uct.ac.za"
                             android:textColor="@color/text_on_surface_variant"
                             android:textSize="11sp" />
                     </LinearLayout>
@@ -525,7 +561,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:backgroundTint="@color/error_container"
-                android:text="Phuma / Log Out"
+                android:text="@string/logout"
                 android:textColor="@color/text_primary"
                 app:cornerRadius="12dp" />
 

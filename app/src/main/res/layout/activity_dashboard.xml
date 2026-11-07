@@ -8,74 +8,12 @@
     android:background="@color/bg_gradient_start">
 
     <!-- Top Premium Header Bar -->
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <include
+        layout="@layout/layout_top_app_bar"
         android:id="@+id/header_bar"
         android:layout_width="match_parent"
-        android:layout_height="72dp"
-        android:background="#1A0F131D"
-        android:paddingHorizontal="16dp"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/iv_logo"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:src="@drawable/ic_assignment_logo"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/tv_header_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:text="Dashboard"
-            android:textColor="@color/text_primary"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@id/iv_logo"
-            app:layout_constraintTop_toTopOf="@id/iv_logo" />
-
-        <TextView
-            android:id="@+id/tv_sync_status"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="• Synced with Cloud"
-            android:textColor="@color/tertiary_green"
-            android:textSize="11sp"
-            app:layout_constraintStart_toStartOf="@id/tv_header_title"
-            app:layout_constraintTop_toBottomOf="@id/tv_header_title" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/surface_container"
-                android:paddingHorizontal="8dp"
-                android:paddingVertical="4dp"
-                android:text="EN"
-                android:textColor="@color/accent_cyan"
-                android:textSize="12sp"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/iv_profile_icon"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_marginStart="12dp"
-                android:src="@android:drawable/sym_def_app_icon"
-                app:tint="@color/text_on_surface_variant" />
-        </LinearLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!-- Main Content Body ScrollView -->
     <ScrollView
@@ -105,7 +43,7 @@
                     android:textColor="@color/text_primary"
                     android:textSize="24sp"
                     android:textStyle="bold"
-                    app:layout_constraintEnd_toStartOf="@id/streak_pill"
+                    app:layout_constraintEnd_toStartOf="@id/tvStreakBadge"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -121,7 +59,7 @@
                     app:layout_constraintTop_toBottomOf="@id/tv_greeting" />
 
                 <LinearLayout
-                    android:id="@+id/streak_pill"
+                    android:id="@+id/tvStreakBadge"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@color/surface_container_high"
@@ -176,6 +114,7 @@
 
             <!-- Weekly Velocity Progress Card -->
             <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardWeeklyVelocity"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
@@ -279,41 +218,10 @@
                 android:scrollbars="none">
 
                 <LinearLayout
+                    android:id="@+id/ll_modules_container"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="8dp"
-                        android:background="@color/surface_container_high"
-                        android:paddingHorizontal="12dp"
-                        android:paddingVertical="8dp"
-                        android:text="🔵 DATA6222 (5)"
-                        android:textColor="@color/accent_cyan"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="8dp"
-                        android:background="@color/surface_container"
-                        android:paddingHorizontal="12dp"
-                        android:paddingVertical="8dp"
-                        android:text="🟣 WEDE6021 (3)"
-                        android:textColor="@color/accent_violet"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@color/surface_container"
-                        android:paddingHorizontal="12dp"
-                        android:paddingVertical="8dp"
-                        android:text="🟢 PROG6212 (4)"
-                        android:textColor="@color/tertiary_green"
-                        android:textStyle="bold" />
                 </LinearLayout>
             </HorizontalScrollView>
 
@@ -334,12 +242,13 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
+                    android:id="@+id/tv_urgent_count"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@color/error_container"
                     android:paddingHorizontal="6dp"
                     android:paddingVertical="2dp"
-                    android:text="1 URGENT"
+                    android:text="0 URGENT"
                     android:textColor="@color/text_primary"
                     android:textSize="10sp"
                     android:textStyle="bold"
@@ -347,98 +256,22 @@
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <!-- Urgent Task Premium Card -->
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/preview_item"
+            <TextView
+                android:id="@+id/tv_no_urgent_tasks"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                app:cardBackgroundColor="@color/surface_container_high"
-                app:cardCornerRadius="16dp"
-                app:strokeColor="@color/destructive_red"
-                app:strokeWidth="1dp">
+                android:layout_marginBottom="12dp"
+                android:text="No tasks due today"
+                android:textColor="#94A3B8"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:visibility="gone" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@color/surface_container"
-                            android:paddingHorizontal="6dp"
-                            android:paddingVertical="2dp"
-                            android:text="DATA6222"
-                            android:textColor="@color/accent_cyan"
-                            android:textSize="11sp"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="⚠️ HIGH PRIORITY"
-                            android:textColor="@color/destructive_red"
-                            android:textSize="11sp"
-                            android:textStyle="bold"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    <TextView
-                        android:id="@+id/tv_task_title"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="4dp"
-                        android:text="Database Normalization &amp; Indexing Assignment"
-                        android:textColor="@color/text_primary"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="12dp"
-                        android:text="Relational schema design, 3NF synthesis, and query execution plan write-up."
-                        android:textColor="@color/text_on_surface_variant"
-                        android:textSize="13sp" />
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="⏰ Due Today, 17:00"
-                            android:textColor="@color/destructive_red"
-                            android:textSize="12sp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="@color/surface_container"
-                            android:paddingHorizontal="8dp"
-                            android:paddingVertical="4dp"
-                            android:text="📋 4/5 subtasks"
-                            android:textColor="@color/text_primary"
-                            android:textSize="11sp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+            <LinearLayout
+                android:id="@+id/ll_today_tasks_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
 
             <!-- Upcoming Tasks Section -->
             <TextView
@@ -450,36 +283,23 @@
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
-            <!-- Upcoming Task Item -->
-            <com.google.android.material.card.MaterialCardView
+            <TextView
+                android:id="@+id/tv_no_upcoming_tasks"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12dp"
-                app:cardBackgroundColor="@color/surface_container"
-                app:cardCornerRadius="12dp"
-                app:strokeWidth="0dp">
+                android:text="No upcoming tasks"
+                android:textColor="#94A3B8"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:visibility="gone" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="12dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="WEDE6021 • MEDIUM • 48h left"
-                        android:textColor="@color/accent_violet"
-                        android:textSize="11sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Software Engineering Project Architecture"
-                        android:textColor="@color/text_primary"
-                        android:textStyle="bold" />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_upcoming_tasks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:nestedScrollingEnabled="false" />
 
             <!-- Interactive Quick Lab Prompt -->
             <LinearLayout

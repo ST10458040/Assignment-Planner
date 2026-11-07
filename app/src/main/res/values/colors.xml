@@ -41,4 +41,14 @@
     <color name="tertiary_container">#10B981</color>
     <color name="on_tertiary_container">#FFFFFF</color>
     <color name="error_container">#EF4444</color>
+
+    <!-- Light Theme Palette -->
+    <color name="light_window_background">#F8FAFC</color>  <!-- Soft clean light grey/white -->
+    <color name="light_card_surface">#FFFFFF</color>       <!-- Pure white for elevated cards -->
+    <color name="light_card_border">#E2E8F0</color>        <!-- Subtle slate border -->
+    <color name="light_text_primary">#0F172A</color>       <!-- Deep slate for headings/titles -->
+    <color name="light_text_secondary">#64748B</color>     <!-- Muted slate for subtitles/dates -->
+    <color name="light_accent_primary">#2563EB</color>     <!-- Cobalt Blue for primary buttons -->
+    <color name="light_accent_cyan">#0891B2</color>        <!-- Deep Cyan for badges -->
+    <color name="light_nav_dock">#FFFFFF</color>           <!-- White bottom navigation dock -->
 </resources>

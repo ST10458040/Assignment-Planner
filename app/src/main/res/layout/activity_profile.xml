@@ -27,7 +27,7 @@
             app:tint="@color/text_primary" />
 
         <TextView
-            android:id="@+id/tv_header_title"
+            android:id="@+id/tvProfileScreenTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
@@ -86,7 +86,7 @@
                         android:layout_marginBottom="12dp">
 
                         <TextView
-                            android:id="@+id/tv_profile_avatar"
+                            android:id="@+id/tvProfileCardInitials"
                             android:layout_width="96dp"
                             android:layout_height="96dp"
                             android:background="@drawable/primary_button_bg"
@@ -95,6 +95,14 @@
                             android:textColor="@color/white"
                             android:textSize="36sp"
                             android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/iv_profile_avatar"
+                            android:layout_width="96dp"
+                            android:layout_height="96dp"
+                            android:scaleType="centerCrop"
+                            android:visibility="gone"
+                            android:background="@drawable/primary_button_bg" />
 
                         <ImageView
                             android:id="@+id/btn_change_avatar"
@@ -113,24 +121,26 @@
                         android:id="@+id/tv_profile_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Mlondi Sithole"
+                        android:text="Mlondi Shezi"
                         android:textColor="@color/text_primary"
                         android:textSize="22sp"
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/tv_profile_email"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="2024-DATA-8841 • 3rd Year BSc IT"
+                        android:text="ST10458040"
                         android:textColor="@color/accent_cyan"
                         android:textSize="13sp" />
 
                     <TextView
+                        android:id="@+id/tv_profile_institution"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="Univ. of Cape Town (UCT)"
+                        android:text="Faculty of Information Technology"
                         android:textColor="@color/text_on_surface_variant"
                         android:textSize="12sp" />
 
@@ -163,6 +173,7 @@
 
             <!-- Stats Row -->
             <LinearLayout
+                android:id="@+id/layoutGamification"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
@@ -243,15 +254,33 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <!-- Academic Info Section -->
-            <TextView
-                android:layout_width="wrap_content"
+            <!-- Academic Info Section Header -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="Academic Record"
-                android:textColor="@color/text_primary"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Academic Record"
+                    android:textColor="@color/text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/btn_edit_academic_record"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@android:drawable/ic_menu_edit"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/accent_cyan" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
@@ -268,18 +297,39 @@
                     android:padding="16dp">
 
                     <TextView
-                        android:id="@+id/tv_profile_faculty"
+                        android:id="@+id/tv_student_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Information Systems &amp; Computer Science"
+                        android:text="Mlondi Shezi"
                         android:textColor="@color/text_primary"
+                        android:textSize="15sp"
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/tv_student_number"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:text="Faculty: Science • NQF 7"
+                        android:layout_marginTop="2dp"
+                        android:text="ST10458040"
+                        android:textColor="@color/accent_cyan"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/tv_profile_faculty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Faculty of Information Technology"
+                        android:textColor="@color/text_primary"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_degree_year"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Bachelor of IT • Year 3 (NQF 7)"
                         android:textColor="@color/text_on_surface_variant"
                         android:textSize="12sp" />
 
@@ -291,13 +341,11 @@
                         android:textColor="@color/text_primary"
                         android:textSize="13sp" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chipGroupEnrolledModules"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:text="DATA6222, WEDE6021, PROG6212"
-                        android:textColor="@color/accent_cyan"
-                        android:textSize="12sp" />
+                        android:layout_marginTop="6dp" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 

@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Uhlelo Lwezabelo</string>
+    <string name="default_web_client_id">YOUR_CLIENT_ID_HERE.apps.googleusercontent.com</string>
+
+    <string name="settings_title">Amasethingi NokuXhuma</string>
+    <string name="status_online">KUXHUNYIWE</string>
+    <string name="sync_engine">Injini YokuXhuma</string>
+    <string name="pending_sync">3 ZILINDILE</string>
+    <string name="queue">UMUGQA</string>
+    <string name="queue_items">3 Izinto</string>
+    <string name="last_sync">UKUXHUMA KOKUGCINA</string>
+    <string name="last_sync_time">10:42</string>
+    <string name="room_db">ROOM DB</string>
+    <string name="room_db_status">v4 Isebenza</string>
+    <string name="sync_now">Xhuma Manje</string>
+    <string name="language_and_display">Ulimi Nokubuka</string>
+    <string name="lang_zulu">isiZulu</string>
+    <string name="lang_english">English</string>
+    <string name="theme_and_aesthetics">Itimu Nobuhle</string>
+    <string name="theme_atmospheric">Emkhathini</string>
+    <string name="theme_amoled">AMOLED</string>
+    <string name="theme_light">Ukukhanya</string>
+    <string name="reminders_and_alerts">Izikhumbuzi Nezixwayiso</string>
+    <string name="push_notifications">Izaziso Ezisheshayo (Push)</string>
+    <string name="push_notif_desc">Iminqamulajuqu, imibiko yokuXhuma</string>
+    <string name="default_reminder_timing">Isikhathi Sesikhumbuzi</string>
+    <string name="reminder_24h">24h phambili</string>
+    <string name="reminder_3h">3h</string>
+    <string name="reminder_1h">1h</string>
+    <string name="reminder_due">Isikhathi Sokuqeda</string>
+    <string name="haptics">Umsindo Oyingozi &amp; Haptics</string>
+    <string name="haptics_desc">Ukudlidliza kwemisebenzi ebalulekile</string>
+    <string name="daily_chime">Isikhumbuzi Sokufunda Sansuku Zonke</string>
+    <string name="daily_chime_desc">Umyalezo wasekuseni (08:00 SAST)</string>
+    <string name="time_0800">08:00</string>
+    <string name="logout">Phuma / Log Out</string>
+    <string name="user_name">Mlondi Sithole</string>
+</resources>

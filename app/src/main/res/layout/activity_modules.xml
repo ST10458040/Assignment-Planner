@@ -8,66 +8,12 @@
     android:background="@color/bg_gradient_start">
 
     <!-- Top premium unified app header bar -->
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <include
+        layout="@layout/layout_top_app_bar"
         android:id="@+id/cl_modules_header"
         android:layout_width="match_parent"
-        android:layout_height="72dp"
-        android:background="#1A0F131D"
-        android:paddingHorizontal="16dp"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/btn_back"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:src="@android:drawable/ic_menu_revert"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/text_primary" />
-
-        <TextView
-            android:id="@+id/tv_header_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:text="Modules"
-            android:textColor="@color/text_primary"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/btn_back"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/surface_container"
-                android:paddingHorizontal="8dp"
-                android:paddingVertical="4dp"
-                android:text="EN | ZU"
-                android:textColor="@color/accent_cyan"
-                android:textSize="11sp"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/iv_profile_icon"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_marginStart="12dp"
-                android:src="@android:drawable/sym_def_app_icon"
-                app:tint="@color/text_on_surface_variant" />
-        </LinearLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!-- Main scrollable content -->
     <ScrollView
@@ -103,9 +49,10 @@
                         android:orientation="vertical"
                         android:padding="12dp">
                         <TextView
+                            android:id="@+id/tvActiveModulesCount"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="3"
+                            android:text="0"
                             android:textColor="@color/text_primary"
                             android:textSize="18sp"
                             android:textStyle="bold" />
@@ -133,9 +80,10 @@
                         android:orientation="vertical"
                         android:padding="12dp">
                         <TextView
+                            android:id="@+id/tvDueTasksCount"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="8"
+                            android:text="0"
                             android:textColor="@color/text_primary"
                             android:textSize="18sp"
                             android:textStyle="bold" />
@@ -161,18 +109,13 @@
                         android:orientation="vertical"
                         android:padding="12dp">
                         <TextView
+                            android:id="@+id/tvYearLevel"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="NQF 7"
+                            android:text="NQF 7 • Year 3"
                             android:textColor="@color/tertiary_green"
                             android:textSize="14sp"
                             android:textStyle="bold" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Year 3"
-                            android:textColor="@color/text_on_surface_variant"
-                            android:textSize="10sp" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
             </LinearLayout>
@@ -214,16 +157,16 @@
                     app:cornerRadius="12dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:visibility="gone" />
+                    android:visibility="visible" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <!-- Modules List -->
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_module_list"
                 android:layout_width="match_parent"
-                android:layout_height="400dp"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="24dp"
-                android:background="@color/surface_container_low" />
+                android:nestedScrollingEnabled="false" />
 
             <!-- Offline Banner -->
             <com.google.android.material.card.MaterialCardView

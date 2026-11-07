@@ -1,35 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/radial_root"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#CC000000"
-    android:id="@+id/radial_root">
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:paddingTop="36dp">
 
     <LinearLayout
         android:id="@+id/ll_radial_actions"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
         android:layout_marginBottom="32dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:gravity="center"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@id/fab_close">
 
+        <!-- Modules -->
         <LinearLayout
             android:id="@+id/btn_action_modules"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:layout_weight="1"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:gravity="center"
+            android:orientation="vertical">
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/surface_container_high"
-                app:tint="@color/text_primary"
-                android:src="@android:drawable/ic_menu_agenda"
-                app:elevation="8dp" />
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                app:cardBackgroundColor="#1E293B"
+                app:cardCornerRadius="28dp"
+                app:cardElevation="8dp"
+                app:strokeWidth="0dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:src="@android:drawable/ic_menu_agenda"
+                    app:tint="@android:color/white" />
+            </com.google.android.material.card.MaterialCardView>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -41,22 +57,33 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
+        <!-- Add Module (Elevated) -->
         <LinearLayout
             android:id="@+id/btn_action_add_module"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:layout_marginBottom="48dp"
+            android:layout_weight="1"
+            android:clipChildren="false"
+            android:clipToPadding="false"
             android:gravity="center"
-            android:layout_marginBottom="48dp">
+            android:orientation="vertical">
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/surface_container_high"
-                app:tint="@color/text_primary"
-                android:src="@android:drawable/ic_menu_add"
-                app:elevation="8dp" />
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                app:cardBackgroundColor="#2563EB"
+                app:cardCornerRadius="28dp"
+                app:cardElevation="8dp"
+                app:strokeWidth="0dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:src="@android:drawable/ic_menu_add"
+                    app:tint="@android:color/white" />
+            </com.google.android.material.card.MaterialCardView>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -68,21 +95,32 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
+        <!-- Add Assignment -->
         <LinearLayout
             android:id="@+id/btn_action_add_assignment"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:layout_weight="1"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:gravity="center"
+            android:orientation="vertical">
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/surface_container_high"
-                app:tint="@color/text_primary"
-                android:src="@android:drawable/ic_menu_edit"
-                app:elevation="8dp" />
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                app:cardBackgroundColor="#1E293B"
+                app:cardCornerRadius="28dp"
+                app:cardElevation="8dp"
+                app:strokeWidth="0dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:src="@android:drawable/ic_menu_edit"
+                    app:tint="@android:color/white" />
+            </com.google.android.material.card.MaterialCardView>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -96,17 +134,26 @@
 
     </LinearLayout>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+    <!-- Close Button -->
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/fab_close"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
         android:layout_marginBottom="44dp"
-        app:backgroundTint="@color/primary_blue"
-        app:elevation="12dp"
+        app:cardBackgroundColor="#2563EB"
+        app:cardCornerRadius="28dp"
+        app:cardElevation="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_close_clear_cancel"
-        app:tint="@android:color/white" />
+        app:strokeWidth="0dp">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            app:tint="@android:color/white" />
+    </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
