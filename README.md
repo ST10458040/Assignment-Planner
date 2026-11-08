@@ -6,7 +6,7 @@
 **Module:** Open Source Coding (Intermediate) – OPSC6312  
 **Institutional Affiliation:** The Independent Institute of Education (IIE) / Rosebank College  
 **Final Submission Tag:** `final-poe`  
-**Demonstration Video Link:** [Insert YouTube Demonstration Video URL Here]  
+**Demonstration Video Link:** []  
 
 ---
 
