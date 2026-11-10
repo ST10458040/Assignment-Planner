@@ -105,7 +105,7 @@ Certificate Issuer: CN=Mlondi Shezi, C=ZA
 
 ### Play Store Listing & Build Evidence
 1. Signed Release APK Generation Evidence
-   ![Release Build](Release build.png)
+   ![Release Build](Releasebuild.png)
 2. Google Play Store Feature Graphic
    ![Banner](1794033340546.jpg)
 3. Google Play Listing
