@@ -108,7 +108,7 @@ Certificate Issuer: CN=Mlondi Shezi, C=ZA
    ![Release Build](Release%20build.png)
 2. Google Play Store Feature Graphic
    ![Banner](1794033340546.jpg)
-3. Google Play Listing
+3. Google Play Listing icon 
    ![App Icon](Icon.png)
 
 ---
